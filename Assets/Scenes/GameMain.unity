@@ -938,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db595f13701044e27a3d946bd06bb63d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.619
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db595f13701044e27a3d946bd06bb63d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4503,12 +4503,16 @@ PrefabInstance:
       value: Soil
       objectReference: {fileID: 0}
     - target: {fileID: 9004620341849320736, guid: 8d59287f4b13e5446bf1c31c7c600f55, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0093096
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004620341849320736, guid: 8d59287f4b13e5446bf1c31c7c600f55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.04832
       objectReference: {fileID: 0}
     - target: {fileID: 9004620341849320736, guid: 8d59287f4b13e5446bf1c31c7c600f55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.62138
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 9004620341849320736, guid: 8d59287f4b13e5446bf1c31c7c600f55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6298,7 +6302,7 @@ MonoBehaviour:
   moveSpeed: 7
   rotationSpeed: 8
   joystick: {fileID: 413584957}
-  interactRadius: 2
+  interactRadius: 1
   interactLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6323,13 +6327,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2.03
-  m_Radius: 0.7
+  m_Height: 1.9
+  m_Radius: 0.58
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.97, z: 0}
+  m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!65 &304731627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6345,7 +6349,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -6807,7 +6811,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.49081656, y: -0.009427438, z: 0.005311255, w: 0.8711958}
-  m_LocalPosition: {x: 42.215897, y: 40.019, z: -20.0284}
+  m_LocalPosition: {x: 42.215897, y: 39.97, z: -20.0284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7963,7 +7967,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -21161,7 +21165,7 @@ Transform:
   m_GameObject: {fileID: 1054513168}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4908165, y: -0.009427436, z: 0.0053112516, w: 0.87119585}
-  m_LocalPosition: {x: 42.215897, y: 40.019, z: -20.0284}
+  m_LocalPosition: {x: 42.215897, y: 39.97, z: -20.0284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36821,11 +36825,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1886289345
