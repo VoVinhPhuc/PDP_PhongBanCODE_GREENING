@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick; 
 
     [Header("Interaction Settings")]
-    public float interactRadius = 2f; 
+    public float interactRadius = 3.5f; 
     public LayerMask interactLayer;   // QUAN TRỌNG: Phải chọn đúng Layer của Hạt và Đất
+    public Transform handPosition;
     
     [Header("Inventory")]
     public int seedCount = 0;
@@ -65,27 +66,64 @@ public class PlayerController : MonoBehaviour
     // HÀM NÀY GẮN VÀO NÚT BẤM
     public void OnActionButtonPressed()
     {
+        // 1. Lấy tất cả vật thể trong phạm vi
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactRadius, interactLayer);
+
+        // 2. Ưu tiên Nhặt Hạt trước (nếu đứng trúng hạt)
+        foreach (var hit in hitColliders)
+        {
+            if (hit.CompareTag("Seed"))
+            {
+                // Gọi logic nhặt hạt (hoặc dùng SeedPickup.cs riêng thì bỏ qua đoạn này)
+                return; 
+            }
+        }
+
+        // 3. Tìm ô đất GẦN NHẤT để trồng
+        Collider nearestSoil = null;
+        float minDistance = float.MaxValue;
 
         foreach (var hit in hitColliders)
         {
-            if (hit.CompareTag("Soil") && seedCount > 0)
+            if (hit.CompareTag("Soil"))
             {
                 SoilLogic soil = hit.GetComponent<SoilLogic>();
+                // Chỉ quan tâm đất trống
                 if (soil != null && soil.isEmpty)
                 {
-                    soil.PlantTree(); 
-                    
-                    seedCount--; // Trừ hạt
-                    
-                    // THÊM DÒNG NÀY: Cập nhật UI sau khi trừ
-                    if (GameManager.Instance != null)
-                        GameManager.Instance.UpdateSeedUI(seedCount);
-
-                    if(animator) animator.SetTrigger("Interact");
-                    return;
+                    float dist = Vector3.Distance(transform.position, hit.transform.position);
+                    if (dist < minDistance)
+                    {
+                        minDistance = dist;
+                        nearestSoil = hit;
+                    }
                 }
             }
+        }
+
+        // 4. Nếu tìm thấy đất phù hợp và có hạt -> TRỒNG
+        if (nearestSoil != null && seedCount > 0)
+        {
+            SoilLogic targetSoil = nearestSoil.GetComponent<SoilLogic>();
+            targetSoil.PlantTree(); // Hàm này sẽ tự lo việc căn giữa
+            
+            seedCount--; // Trừ hạt
+            
+            // Cập nhật UI
+            if (GameManager.Instance != null)
+                GameManager.Instance.UpdateSeedUI(seedCount);
+
+            // Play Sound
+            if (GameManager.Instance != null)
+                GameManager.Instance.PlayButtonSound();
+
+            if(animator) animator.SetTrigger("Interact");
+            
+            Debug.Log("Đã trồng vào ô đất gần nhất!");
+        }
+        else if (seedCount <= 0)
+        {
+            Debug.Log("Hết hạt giống rồi!");
         }
     }
 
