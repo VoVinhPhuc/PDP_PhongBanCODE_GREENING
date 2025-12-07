@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc799414f52a848ec92d812ba953619c
+guid: 2693c1ca381f6f144b31b0c8c074624c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,40 +93,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Seed_0
+      name: Untitled design_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 93
-        width: 560
-        height: 723
+        x: 0
+        y: 0
+        width: 409
+        height: 568
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 113c2d6535c484720af82099f820ec88
-      internalID: 1824284049
+      spriteID: 13f1a69a3b719884e93da11a7c5a0d73
+      internalID: 911647375
       vertices: []
       indices: 
       edges: []
@@ -135,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d5213052e1d38ad4daa8acea069ed3be
     internalID: 0
     vertices: []
     indices: 
@@ -143,9 +130,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Seed_0: 1824284049
+      Untitled design_0: 911647375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
